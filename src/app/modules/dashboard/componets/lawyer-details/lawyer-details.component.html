@@ -1,0 +1,95 @@
+<div class="container-fluid mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header text-center text-capitalize bg-info text-light " readonly>{{lawyer.firstName}} </div>
+                <div class="card-body">
+                    <form>
+                        <hr style="background-color: white;">
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label for="">First Name</label>
+                                <input type="text" name="firstName" ngModel="{{lawyer.firstName}}" class="form-control"
+                                    required readonly>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="">Middle Name</label>
+                                <input type="text" name="middleName" ngModel="{{lawyer.middleName}}"
+                                    class="form-control" required readonly>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <div class="col-md-6 mb-4">
+                                    <label for="">Last Name</label>
+                                    <input type="text" name="lastName" ngModel="{{lawyer.lastName}}" class="form-control"
+                                        required readonly>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="">Educational Level:</label>
+                                <input type="text" name="educationLevel" ngModel="{{lawyer.educationLevel}}" class="form-control"
+                                required readonly>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="">Address</label>
+                                <input type="text" name="address" ngModel="{{lawyer.address}}" class="form-control"
+                                    required readonly>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="">Phone Number</label>
+                                <input type="text" name="phoneNo" ngModel="{{lawyer.phoneNo}}" class="form-control"
+                                    required  readonly>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="">Email Adress</label>
+                                <input type="email" name="email" ngModel="{{lawyer.email}}" class="form-control"
+                                    required  readonly>
+                            </div>
+                            <div class="form-group col-md-6 mb-4">
+                                <label for="">Gender:</label>
+                                <input type="text" name="gender" ngModel="{{lawyer.gender}}" class="form-control"
+                                required readonly>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="">Marital Status</label>
+                                <input type="text" name="maritalStatus" ngModel="{{lawyer.maritalStatus}}"
+                                    class="form-control" required readonly>
+                            </div>
+                           
+                            <div class="col-md-6 mb-4">
+                                <label for="">License</label>
+                                <input type="text" name="license" ngModel="{{lawyer.license}}" class="form-control"
+                                    required readonly>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="">Specialization</label>
+                                <input type="text" name="specialization" ngModel="{{lawyer.specialization}}"
+                                    class="form-control" required readonly>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label for="">Working Experience</label>
+                                <input type="text" name="workingExperience" ngModel="{{lawyer.workingExperience}}"
+                                    class="form-control" required readonly>
+                            </div>
+
+                            <div class="col-md-12 mb-4">
+                                <button class="btn btn-info ml-5 col-md-6" type="submit">Close </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- <p>lawyer-details works!</p>
+    <div class="p-5 m-5">
+        <h1>lawyer details</h1>
+        <pre>{{lawyer|json}}</pre>
+    </div> -->

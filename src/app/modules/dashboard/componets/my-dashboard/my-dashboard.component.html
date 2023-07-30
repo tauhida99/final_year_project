@@ -1,0 +1,170 @@
+<nav class="navbar navbar-expand-md navbar-light">
+    <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse"
+        data-target="#responsiveNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="responsiveNavbar">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- sidebar -->
+                <div class="col-xl-2 col-lg-3 col-md-4 fixed-top sidebar">
+                    <div class="pb-3 pt-3">
+                        <a>
+                            <img src="assets/img/pc0.png" class="rounded-circle mr-3 mb-3" width="50" height="50"
+                                alt=""></a>
+                        <span class="text-light text-capitalize">
+                            <br> {{ currentUser.username }}
+                        </span>
+                    </div>
+                    <ul class="navbar-nav flex-column mt-3">
+                        <li class="nav-item">
+                            <a routerLink="./home" class="nav-link text-light p-3 mb-2 current">
+                                <i class="fas fa-qrcode text-light fa-lg mr-3"></i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown" [hidden]="isAdminOrLawyer">
+                            <a class="nav-link text-light p-3 mb-2 sidebar-link" data-toggle="dropdown">
+                                <div class="dropdown-toggle"></div>
+                                <i class="fas fa-registered text-light fa-lg mr-3"></i>
+                                <span>Case Registration</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a routerLink="./register-case" class="dropdown-item drop-bg">Register cases</a>
+
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown" [hidden]="isAdminOrLawyer">
+                            <a class="nav-link text-light p-3 mb-2 sidebar-link" data-toggle="dropdown">
+                                <div class="dropdown-toggle"></div>
+                                <i class="fas fa-file text-light fa-lg mr-3"></i>
+                                <span>View Cases</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a routerLink="./my-cases" class="dropdown-item drop-bg">My cases</a>
+                                <a routerLink="./my-case-proceeding" class="dropdown-item drop-bg">My Case
+                                    Proceeding</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown" [hidden]="!isLawyer">
+                            <a class="nav-link text-light p-3 mb-2 sidebar-link" data-toggle="dropdown">
+                                <div class="dropdown-toggle"></div>
+                                <i class="fas fa-file text-light fa-lg mr-3"></i>
+                                <span>CLient Case</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a routerLink="./my-client" class="dropdown-item drop-bg">My client Case</a>                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown" [hidden]="!isLawyer">
+                            <a class="nav-link text-light p-3 mb-2 sidebar-link" data-toggle="dropdown">
+                                <div class="dropdown-toggle"></div>
+                                <i class="fas fa-file text-light fa-lg mr-3"></i>
+                                <span>CLient Case Status</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a routerLink="./my-case-proceeding" class="dropdown-item drop-bg">My client Case Status</a>                            </div>
+                        </li>
+
+                        <!-- <li class="nav-item dropdown" [hidden]="currentUserrole == 'ROLE_CLIENT'"> -->
+                        <li class="nav-item dropdown" [hidden]="isClientOrLawyer">
+                            <a class="nav-link text-light p-3 mb-2 sidebar-link" data-toggle="dropdown">
+                                <div class="dropdown-toggle"></div>
+                                <i class="fas fa-users text-light fa-lg mr-3"></i>
+                                <span>Manage Users</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a routerLink="./list-users" class="dropdown-item drop-bg">List Users</a>
+                            </div>
+                        </li>
+                        <li [hidden]="!isAdmin" class="nav-item dropdown">
+                            <a class="nav-link text-light p-3 mb-2 sidebar-link" data-toggle="dropdown">
+                                <div class="dropdown-toggle"></div>
+                                <i class="fas fa-user fa-sm text-light fa-lg mr-3"></i>
+                                <span>View Lawyers</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a routerLink="./list-lawyer" class="dropdown-item drop-bg">List Lawyers</a>
+                            </div>
+                        </li>
+
+                        <li [hidden]="!isAdmin" class="nav-item dropdown">
+                            <a class="nav-link text-light p-3 mb-2 sidebar-link" data-toggle="dropdown">
+                                <div class="dropdown-toggle"></div>
+                                <i class="fas fa-file text-light fa-lg mr-3"></i>
+                                <span>Manage Cases</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a routerLink="./list-cases" class="dropdown-item drop-bg">View Cases</a>
+                                <a routerLink="./list-case-proceeding" class="dropdown-item drop-bg">View Case
+                                    Proceeding</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light p-3 mb-2">
+                                <i class="fas fa-file-export text-light fa-lg mr-3"></i>
+                                <span>G. Report</span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- end of sidebar -->
+
+                <!-- topbar -->
+                <div class="col-xl-10 col-lg-9 col-md-8 ml-auto  fixed-top top-navbar top_navbar_for_sm_device">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <h4 class="text-light mb-0">Online Lawyer Finder </h4>
+                        </div>
+                        <div class="col-md-5">
+                            <!-- <h4 class="text-light text-uppercase mb-0"> online lawyer finder system</h4> -->
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="navbar-nav">
+                                <li class="nav-item ml-md-auto dropdown">
+                                    <a class="nav-link icon-bullet" data-toggle="dropdown" href="#">
+                                        <img class="rounded-circle mr-3" src="assets/img/pc0.png" width="40" height="40"
+                                            alt="">
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right ml-auto">
+                                        <!-- <a class="dropdown-item drop-bg">
+                                            <i class="fas fa-home fa-sm text-muted mr-2"></i>
+                                            My Dashboard
+                                        </a> -->
+                                        <div class="dropdown-divider"></div>
+                                        <a routerLink="/user-profile" class="dropdown-item drop-bg">
+                                            <i class="fas fa-user fa-sm text-muted mr-2"></i>
+                                            My Profile
+                                        </a>
+                                        <!-- mstary -->
+                                        <div class="dropdown-divider"></div>
+                                        <a (click)="logOut()" data-bs-toggle="modal" class="dropdown-item drop-bg"
+                                            style="cursor: pointer;">
+                                            <i class="fas fa-sign-out-alt fa-sm text-muted mr-2"></i>
+                                            Log Out
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of topbar -->
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- main contents -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto pt-4">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

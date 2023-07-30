@@ -1,0 +1,87 @@
+<div class="container  mt-5">
+  <form #updatedForm="ngForm" (ngSubmit)="onUpdateUser(updatedForm)">
+    <div class="title pt-3 mb-3">
+      <h4 class="text-center text-uppercase">Update form</h4>
+    </div>
+    <hr style="background-color: white;">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <label for="">First Name</label>
+        <input type="text" name="firstName" ngModel="{{ updateUser.firstName }}" class="form-control" required>
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="">Middle Name</label>
+        <input type="text" name="middleName" ngModel="{{ updateUser.middleName }}" class="form-control" required>
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="">Last Name</label>
+        <input type="text" name="lastName" ngModel="{{ updateUser.lastName }}" class="form-control" required>
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="">Username</label>
+        <input type="text" name="username" ngModel="{{ updateUser.username }}" class="form-control" required>
+      </div>
+      <!-- <div class="col-md-6 mb-4 ">
+                <label for="">Password</label>
+                <input type="password" name="password" ngModel="{{ updateUser.password }}" class="form-control" required>
+            </div> -->
+      <div class="form-group col-md-6 mb-4">
+        <label for="">Educational Level:</label>
+        <select class="form-group form-control" ngModel="{{ updateUser.educationLevel }}" name="educationLevel">
+          <option value="Form Four">Form Four</option>
+          <option value="Certificate">Certificate</option>
+          <option value="Diplomer">Diplomer</option>
+          <option value="Degree">Degree</option>
+          <option value="Master">Master</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6 mb-4">
+        <label for="">Role:</label>
+        <select class="form-group form-control" ngModel="{{ updateUser.role }}" name="role"
+          ngModel="=ROLE_CLIENT">
+          <option value="ROLE_ADMIN">ADMIN</option>
+          <option value="ROLE_JUDGE">JUDGE</option>
+          <option value="ROLE_LAWYER">LAWYER</option>
+          <option value="ROLE_CLIENT">CLIENT</option>
+        </select>
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="">Address</label>
+        <input type="text" name="address" ngModel="{{ updateUser.address }}" class="form-control" required>
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="">Phone Number</label>
+        <input type="text" name="phoneNo" ngModel="{{ updateUser.phoneNo }}" class="form-control" required>
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="">Email Adress</label>
+        <input type="email" name="email" ngModel="{{ updateUser.email }}" class="form-control" required>
+      </div>
+      <div class="form-group col-md-6 mb-4">
+        <label for="">Gender:</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" ngModel="{{ updateUser.gender }}" name="gender" value="Male">
+          <label class="form-check-label">Male</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" ngModel="{{ updateUser.gender }}" name="gender" value="Female">
+          <label class="form-check-label">Female</label>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <label for="">Marital Status</label>
+        <input type="text" name="maritalStatus" ngModel="{{ updateUser.maritalStatus }}" class="form-control" required>
+      </div>
+      <div class="col-md-12 mb-4">
+        <label for="">Date Of Birth</label>
+        <input type="date" name="dateOfBirth" ngModel="{{ updateUser.dateOfBirth }}" class="form-control" required>
+      </div>
+      <div class="col-md-6 mb-4  ">
+        <button [disabled]="updatedForm.invalid" class="btn btn-primary col-md-6" type="submit">Save Changes</button>
+      </div>
+      <div class="col-md-6 mb-4">
+        <button [disabled]="updatedForm.invalid" class="btn btn-primary col-md-6" type="submit">Close </button>
+      </div>
+    </div>
+  </form>
+</div>

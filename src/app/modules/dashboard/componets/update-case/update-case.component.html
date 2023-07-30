@@ -1,0 +1,57 @@
+<div class="container  mt-5" >
+    <form #UpdateCaseForm="ngForm" >
+        <div class="title pt-3 mb-3">
+            <h4 class="text-center text-uppercase">Update Case Registration form</h4>
+        </div>
+        <hr style="background-color: white;">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <label for="">Case Name</label>
+                <input type="text" name="caseName"  ngModel="{{updateCase.caseName}}" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label for="">Cases Type</label>
+                <input type="text" name="caseType" ngModel="{{updateCase.caseType}}" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label for="">Creation Date</label>
+                <input type="date" name="creationDate" ngModel="{{updateCase.creationDate}}" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-4">
+                <label for="">Case Source</label>
+                <input type="text" name="caseSource" ngModel="{{updateCase.caseSource}}" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-4 ">
+                <label for="">Location</label>
+                <input type="text" name="location" ngModel="{{updateCase.location}}" class="form-control" required>
+            </div>
+
+              <div class="col-md-6 mb-4">
+                <label for="">Witness First Name</label>
+                <input type="text" name="witnessFirstName" ngModel="{{updateCase.witnessFirstName}}" class="form-control"required>
+              </div>
+
+              <div class="col-md-6 mb-4">
+                <label for="">Witness Last Name</label>
+                <input type="text" name="witnessLastName" ngModel="{{updateCase.witnessLastName}}" class="form-control" required>
+              </div>
+              <div class="col-md-6 mb-4">
+                <label for="">Witness Adress</label>
+                <input type="text" name="witnessAddress" ngModel="{{updateCase.witnessAddress}}" class="form-control" required>
+              </div>
+              
+              <div class="col-md-6 mb-4">
+                <label for="">Witness Phone No</label>
+                <input type="text" name="witnessPhoneNo" ngModel="{{updateCase.witnessPhoneNo}}" class="form-control" required>
+              </div>
+
+            <div class="col-md-6 mb-4  ">
+                <button [disabled]="UpdateCaseForm.invalid" class="btn btn-primary col-md-6" type="submit">Submit </button>
+            </div>
+            <div class="col-md-6 mb-4">
+              <button [disabled]="UpdateCaseForm.invalid" class="btn btn-primary col-md-6" type="submit">Close </button>
+            </div>
+        </div>
+    </form>
+</div>
+

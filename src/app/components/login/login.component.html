@@ -1,0 +1,24 @@
+<div class="container d-flex justify-content-center mt-5" >
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+        <div class="title pt-3 mb-3">
+            <h4 class="text-center text-uppercase">login form</h4>
+        </div>
+        <hr style="background-color: white;">
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <label for="">Username</label>
+                <input type="text" name="username"  ngModel class="form-control" required>
+            </div>
+            <div class="col-md-12 mb-4">
+                <label for="">Password</label>
+                <input type="password" name="password" ngModel class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-4  ">
+                <button class="btn btn-primary col-md-12">Login</button>
+            </div>
+            <div class="col-md-6 mb-4  ">
+                <button routerLink="/register" class="btn btn-success col-md-12">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>

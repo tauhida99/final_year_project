@@ -1,0 +1,23 @@
+<div class="container-fluid mt-5">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="text-center">
+                <th>Case Session</th>
+                <th>Start Session Date</th>
+                <th>Session Decision</th>
+                <th> Case Name</th>
+
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let caseproceeding of caseProceeding">
+            <tr>
+                <td>{{caseproceeding?.caseSession}}</td>
+                <td>{{caseproceeding?.caseSessionDateStart}}</td>
+                <td>{{caseproceeding?.caseSessionDecision}}</td>
+                <td>{{caseproceeding?.cases?.caseName}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

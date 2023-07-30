@@ -1,0 +1,36 @@
+<div class="container-fluid mt-5">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="text-center">
+                <th>CaseName</th>
+                <th>CaseType</th>
+                <th>CreationDate</th>
+                <th>Location</th>
+                <th>WitnessFirstName</th>
+                <th>WitnessPhone</th>
+                <th>Client Names</th>
+                <th>Client Contact</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let cas of case">
+            <tr>
+                <td>{{cas?.caseName}}</td>
+                <td>{{cas?.caseType}}</td>
+                <td>{{cas?.creationDate}}</td>
+                <td>{{cas?.location}}</td>
+                <td>{{cas?.witnessFirstName}}</td>
+                <td>{{cas?.witnessPhoneNo}}</td>
+                <td>{{cas?.client?.firstName}}</td>
+                <td>{{cas?.client?.phoneNo}}</td>
+
+                <td class="text-center">
+                    <button (click)="sendEmail(cas.client.email)" class="btn btn-info btn-sm mr-3">Confirm</button>
+                </td>
+                
+               
+            </tr>
+        </tbody>
+    </table>
+</div>

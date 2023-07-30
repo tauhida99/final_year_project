@@ -1,0 +1,30 @@
+<div class="container-fluid mt-5">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="text-center">
+                <th>CaseName</th>
+                <th>CaseType</th>
+                <th>CreationDate</th>
+                <th>Location</th>
+                <th>WitnessFirstName</th>
+                <th>WitnessPhone</th>
+                <th> WitnessAddress</th>
+                <th> Lawyer</th>
+
+            </tr>
+        </thead>
+        <tbody *ngFor="let case of cases">
+            <tr>
+                <td>{{case?.caseName}}</td>
+                <td>{{case?.caseType}}</td>
+                <td>{{case?.creationDate}}</td>
+                <td>{{case?.location}}</td>
+                <td>{{case?.witnessFirstName}}</td>
+                <td>{{case?.witnessPhoneNo}}</td>
+                <td>{{case?.witnessAddress}}</td>
+                <td>{{case?.lawyer?.firstName}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

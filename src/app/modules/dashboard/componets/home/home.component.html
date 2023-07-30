@@ -1,0 +1,76 @@
+<div class="container-fluid mt-5 mb-5">
+    <!-- For client -->
+    <div [hidden]="!isClient"  class="row">
+        <div class="col-md-4" *ngFor="let lawyer of lawyers">
+            <div class="card">
+                <div class="card-header text-center text-capitalize bg-info text-light">
+                    {{ lawyer?.firstName }}
+                </div>
+                <div class="card-body">
+                    <img src="../../../../../assets/img/cust3.jpeg" width="300" alt="" class="img-thumbnail" style="height: 300px;">
+                </div> 
+                <div class="card-footer">
+                    <button (click)="viewLawyerDetails(lawyer)" class="btn btn-info btn-sm btn-block">View More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid mt-5 mb-5">
+        <!-- For lawyer -->
+        <div [hidden]="isClientOrAdmin"  class="row">
+            <div class="col-md-4" *ngFor="let client of clients">
+                <div class="card">
+                    <div class="card-header text-center text-capitalize bg-info text-light">
+                        {{ client?.firstName }}
+                    </div>
+                    <div class="card-body">
+                        <img src="../../../../../assets/img/cust4.jpeg" width="300" alt="" class="img-thumbnail" style="height: 300px;">
+                    </div> 
+                    <div class="card-footer">
+                        <button  class="btn btn-info btn-sm btn-block">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+
+    <!-- for admin -->
+    <div [hidden]="!isAdmin" class="row mt-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <img src="../../../../../assets/img/pic3.jpg" width="1000" alt="" class="img-thumbnail" style="height: 300px;">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-users fa-lg me-4"></i>
+                    <span class="ms-3">Total Lawyers: 50</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-users fa-lg me-4"></i>
+                    <span class="ms-3">Total Clients: 200</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <i class="fas fa-users fa-lg me-4"></i>
+                    <span class="ms-3">Total judges: 150</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

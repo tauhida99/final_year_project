@@ -1,0 +1,14 @@
+form {
+    background-color: rgb(197, 215, 231);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.title h4 {
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 4px;
+}
+ .form-control {
+    box-shadow: none;
+}

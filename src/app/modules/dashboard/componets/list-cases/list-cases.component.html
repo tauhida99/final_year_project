@@ -1,0 +1,35 @@
+<div class="container-fluid mt-5">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="text-center">
+                <th>CaseID</th>
+                <th>CaseName</th>
+                <th>CaseType</th>
+                <th>CreationDate</th>
+                <th>Location</th>
+                <th>WitnessFirstName</th>
+                <th>WitnessPhone</th>
+                <th>Client Names</th>
+
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let case of cases">
+            <tr>
+                <td>{{case?.caseId}}</td>
+                <td>{{case?.caseName}}</td>
+                <td>{{case?.caseType}}</td>
+                <td>{{case?.creationDate}}</td>
+                <td>{{case?.location}}</td>
+                <td>{{case?.witnessFirstName}}</td>
+                <td>{{case?.witnessPhoneNo}}</td>
+                <td>{{case?.client?.firstName}}</td>
+                <td>
+                    <button (click)="findCaseById(case.caseId)"  class="btn btn-info btn-sm mr-3">Edit</button>
+                    <button class="btn btn-danger btn-sm">Delete</button>
+                </td>
+               
+            </tr>
+        </tbody>
+    </table>
+</div>
